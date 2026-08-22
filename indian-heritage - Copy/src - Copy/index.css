@@ -1,0 +1,197 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Outfit', 'Inter', system-ui, sans-serif;
+  --color-crimson: #8B1E1E;
+  --color-crimson-deep: #5A1212;
+  --color-crimson-light: #A83232;
+  --color-saffron: #F4A825;
+  --color-saffron-light: #FFE082;
+  --color-gold: #C5A028;
+  --color-gold-pale: #F0E6C4;
+  --color-ink: #1A0F08;
+  --color-parchment: #F8F4E8;
+  --color-stone: #E8E0D0;
+  --color-amber-glow: #FF9800;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Outfit', system-ui, sans-serif;
+  background-color: #F8F4E8;
+  color: #1A0F08;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(139, 30, 30, 0.15);
+  color: inherit;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUpSlow {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-14px) rotate(1deg); }
+}
+
+@keyframes pulseSoft {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+@keyframes revealScale {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes rotateSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.9s ease-out both;
+}
+
+.animate-fade-up-slow {
+  animation: fadeUpSlow 1.2s ease-out both;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1.2s ease-out both;
+}
+
+.animate-reveal {
+  animation: revealScale 0.8s ease-out both;
+}
+
+.animate-slide-left {
+  animation: slideInLeft 0.9s ease-out both;
+}
+
+.animate-slide-right {
+  animation: slideInRight 0.9s ease-out both;
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: floatSlow 7s ease-in-out infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulseSoft 4s ease-in-out infinite;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #C5A028 0%, #FFE082 50%, #C5A028 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% auto;
+  animation: shimmer 4s linear infinite;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.hero-pattern {
+  background-image: radial-gradient(circle at 20% 30%, rgba(197, 160, 40, 0.08) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 70%, rgba(139, 30, 30, 0.06) 0%, transparent 50%);
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Decorative decorative ornament */
+.ornament {
+  background: linear-gradient(90deg, transparent, rgba(197, 160, 40, 0.4), transparent);
+  height: 1px;
+}
+
+/* Card decorative top border */
+.card-ornament {
+  position: relative;
+  overflow: hidden;
+}
+
+/* 3D Flip Card Styles */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.preserve-3d:hover {
+  transform-style: preserve-3d;
+}
+
+.card-ornament::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #C5A028, rgba(139,30,30,0.6), #C5A028, transparent);
+  opacity: 0.5;
+}
